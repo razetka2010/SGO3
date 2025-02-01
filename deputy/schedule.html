@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Расписание</h1>
+        <div>
+            <select id="classSelect"></select>
+            <button id="loadScheduleButton">Загрузить расписание</button>
+        </div>
+        <table id="scheduleTable">
+            <thead>
+                <tr>
+                    <th>Класс</th>
+                    <th>Предмет</th>
+                    <th>Время</th>
+                    <th>Учитель</th>
+                </tr>
+            </thead>
+            <tbody id="scheduleTableBody"></tbody>
+        </table>
+    
+        <button id="addScheduleButton">Добавить запись в расписание</button>
+        <!-- Модальное окно для добавления расписания -->
+        <div id="addScheduleModal" class="modal" style="display: none;">
+            <!-- ... (форма для добавления расписания) ... -->
+        </div>
+    </div>
+</body>
+</html>
