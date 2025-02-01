@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once '../lib/db.php';
-
 header('Content-Type: application/json; charset=utf-8');
 
 // Включаем вывод ошибок только для отладки (уберите в production)
@@ -49,7 +48,7 @@ try {
                     $_SESSION['user_id'] = $user['id'];
                      echo json_encode(['success' => true, 'user' => ['id' => $user['id'], 'name' => $user['name'], 'role' => $user['role']], 'message' => 'Logged in successfully']);
                 } else {
-                    echo json_encode(['success' => false, 'message' => 'Invalid login or password.']);
+                     echo json_encode(['success' => false, 'message' => 'Invalid login or password.']);
                 }
             } else {
                 echo json_encode(['success' => false, 'message' => 'Invalid request method']);
@@ -61,6 +60,9 @@ try {
      echo json_encode(['success' => false, 'message' => 'Server error: ' . $e->getMessage()]);
 } finally {
    if($conn)
+   $conn->close();
+}
+?>
    $conn->close();
 }
 ?>
